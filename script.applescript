@@ -23,12 +23,16 @@ if not fileExists then
 end if
 
 -- 2. Ask the user for the gap between clicks (in seconds)
-try
-	set gapResponse to display dialog "Enter the gap between clicks (in seconds):" default answer "5" buttons {"Cancel", "OK"} default button "OK"
-	set secondsGap to text returned of gapResponse as integer
-on error
-	return -- User canceled
-end try
+--try
+--	set gapResponse to display dialog "Enter the gap between clicks (in seconds):" default answer "5" buttons {"Cancel", "OK"} default button "OK"
+--set secondsGap to text returned of gapResponse as integer
+--on error
+--return -- User canceled
+--end try
+
+-- 2. Simple User Interface
+
+
 
 -- 3. Ask the user for the total duration (in minutes)
 try
