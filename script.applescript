@@ -45,12 +45,21 @@ set frame_h to 300
 
 -- Smol container for text inputs 300x300 
 
-set accessoryView to NSView's alloc()'s initWithFrame:(currentApp's NSMakeRect((frame_w / 2), (frame_h * 0.12), 80, 22))
+set accessoryView to NSView's alloc()'s initWithFrame:(currentApp's NSMakeRect(0, 0, frame_w, frame_h))
 
 -- "interval" Input Box
-set inputInterval to NSTextField's alloc()'s initWithFrame:(currentApp's NSMakeRect(0, (frame_h * 0.02), 80, 22))
+set inputInterval to NSTextField's alloc()'s initWithFrame:(currentApp's NSMakeRect((frame_w / 2), (frame_h * 0.12), 80, 22))
 inputInterval's setStringValue:"5" -- basic value
 set labelInterval to NSTextField's alloc()'s initWithFrame:(currentApp's NSMakeRect(0, (frame_h * 0.12), 140, 22))
+labelInterval's setStringValue:"Interval (seconds):"
+labelInterval's setBezeled:false
+labelInteval's setDrawsBackground:false
+labelInterva's setEditable:false
+
+-- "duration" input box
+set inputInterval to NSTextField's alloc()'s initWithFrame:(currentApp's NSMakeRect((frame_w / 2), (frame_h * 0.02), 80, 22))
+inputInterval's setStringValue:"5" -- basic value
+set labelInterval to NSTextField's alloc()'s initWithFrame:(currentApp's NSMakeRect(0, (frame_h * 0.2), 140, 22))
 labelInterval's setStringValue:"Interval (seconds):"
 labelInterval's setBezeled:false
 labelInteval's setDrawsBackground:false
