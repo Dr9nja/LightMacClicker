@@ -1,3 +1,8 @@
+use AppleScript version "2.4"
+use scripting additions
+use framework "Foundation"
+use framework "AppKit"
+
 set cliclickPath to "/opt/homebrew/bin/cliclick"
 
 -- 1. Verify that cliclick is installed before doing anything else
