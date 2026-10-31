@@ -39,6 +39,15 @@ theAlert's setInfomativeText:"Hai!! Configure your clicking session parameters h
 theAlert's addButtonWithTitle:"Start Clicker"
 theAlert's addButtonWithTitle:"Cancel"
 
+-- some frame proportions
+set frame_w to 300
+set frame_h to 300
+
+-- Smol container for text inputs 300x300 
+
+set accessoryView to NSView's alloc()'s initWithFrame:(currentApp's NSMakeRect((frame_w / 2), (frame_h * 0.12), 80, 22))
+
+
 -- 3. Ask the user for the total duration (in minutes)
 try
 	set durationResponse to display dialog "Enter how many minutes this should run:" default answer "10" buttons {"Cancel", "OK"} default button "OK"
