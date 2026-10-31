@@ -65,6 +65,15 @@ labelDuration's setBezeled:false
 labelDuration's setDrawsBackground:false
 labelDuration's setEditable:false
 
+-- labels next to the fields (draw)
+accessoryView's addSubview:inputInterval
+accessoryView's addSubview:labelInterval
+accessoryView's addSubview:inputDuration
+accessoryView's addSubview:labelDuration
+
+-- attaching the view to the window
+theAlert's setAccessoryView:accessoryView
+
 -- 3. Ask the user for the total duration (in minutes)
 try
 	set durationResponse to display dialog "Enter how many minutes this should run:" default answer "10" buttons {"Cancel", "OK"} default button "OK"
