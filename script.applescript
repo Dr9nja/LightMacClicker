@@ -47,6 +47,10 @@ set frame_h to 300
 
 set accessoryView to NSView's alloc()'s initWithFrame:(currentApp's NSMakeRect((frame_w / 2), (frame_h * 0.12), 80, 22))
 
+-- "interval" Input Box
+set inputInterval to NSTextField's alloc()'s initWithFrame:(currentApp's NSMakeRect(0, (frame_h * 0.02), 80, 22))
+inputInterval's setStringValue:"5" -- basic value
+set labelInterval to NSTextField's alloc()'s initWithFrame:(currentApp's NSMakeRect(0, (frame_h * 0.12), 140, 22))
 
 -- 3. Ask the user for the total duration (in minutes)
 try
