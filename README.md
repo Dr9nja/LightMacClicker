@@ -14,7 +14,7 @@ brew install cliclick
 ## Plans
 
 - [x] Add prompt to ask user for runtime duration and click intervals.
-- [ ] Add a graphical interface using SwiftUI (if possible).
+- [x] Add a graphical interface using Cocoa!!
 
 :P
 
