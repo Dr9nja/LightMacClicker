@@ -3,6 +3,13 @@ use scripting additions
 use framework "Foundation"
 use framework "AppKit"
 
+-- Using AppleSctiptObjC (ASObjC)  for easier user friendly interface!!
+
+property NSAlert : a reference to current application's NSAlert
+property NSTextField : a reference to current application's NSTextField
+property NSView : a reference to current application's NSView
+property NSRect : a reference to current application's NSRect
+
 set cliclickPath to "/opt/homebrew/bin/cliclick"
 
 -- 1. Verify that cliclick is installed before doing anything else
