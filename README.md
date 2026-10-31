@@ -10,9 +10,6 @@ To use this code, you must have `cliclick` installed via Homebrew. You can insta
 ```bash
 brew install cliclick
 ```
-```zsh
-brew install cliclick
-```
 
 ## Plans
 
