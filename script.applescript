@@ -85,24 +85,25 @@ theAlert's setAccessoryView:accessoryView
 -- 3. show the window and capture results
 set modalResponse to theAlert's runModal()
 
-
-
--- 4. Calculate total seconds and loop iterations
-set totalSeconds to totalMinutes * 60
-set totalClicks to totalSeconds / secondsGap
-
--- 5. Execution Loop
-repeat totalClicks times
-	try
-		-- Right-click at the current mouse position
-		do shell script "" & cliclickPath & " rc:."
-	on error errMsg
-		display dialog "Error running cliclick: " & errMsg buttons {"Stop Script"} default button "Stop Script"
-		return
-	end try
+-- if user clicks "Start Clicker" (which is 1000)
+if modalResponse is 1000 then
+	set secondsGap to (inputInterval's stringValue()) as integer
+	set totalMinutes to (inputDuration's stringValue()) as integer
 	
-	-- Pause for the requested gap before clicking again
-	delay secondsGap
-end repeat
+	--Calculating loops
+	set totalSeconds to totalMinutes * 60
+	set totalClicks to totalSeconds / secondsGap
+	
+	--Execute
+	repeat totalClicks times
+		try
+			do shell script "" & cliclickPath & " rc:."
+		on error errMsg
+			display dialog "Error running cliclick: " & errMsg buttons {"Stop Script"} default button "Stop Script"
+			return
+		end try
+	end repeat
+	display dialog "Clicking session completed successfully with total clicks of " & totalClicks & "!" buttons {"OK"} default button "OK"
+end if
 
-display dialog "Clicking session completed successfully with total clicks of " & totalClicks & "!" buttons {"OK"} default button "OK"
+
