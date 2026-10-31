@@ -22,6 +22,13 @@ if not fileExists then
 	return
 end if
 
+-- Main Thread protection wrapper
+if not (current application's NSThread's isMainThread()) then
+	display dialog "This script must be run on the main thread. If you are in FastScripts or a custom runner, enable 'Run on Main Thread'." buttons {"OK"} default button "OK"
+	return
+end if
+
+
 -- Ask the user for the gap between clicks (in seconds)
 --try
 --	set gapResponse to display dialog "Enter the gap between clicks (in seconds):" default answer "5" buttons {"Cancel", "OK"} default button "OK"
@@ -35,31 +42,31 @@ end if
 set currentApp to current application
 set theAlert to NSAlert's alloc()'s init()
 theAlert's setMessageText:"LightMacClicker Settings"
-theAlert's setInfomativeText:"Hai!! Configure your clicking session parameters here:"
+theAlert's setInformativeText:"Hai!! Configure your clicking session parameters here:"
 theAlert's addButtonWithTitle:"Start Clicker"
 theAlert's addButtonWithTitle:"Cancel"
 
 -- some frame proportions
 set frame_w to 300
-set frame_h to 300
+set frame_h to 100
 
--- Smol container for text inputs 300x300 
+-- Smol container for text inputs 
 
 set accessoryView to NSView's alloc()'s initWithFrame:(currentApp's NSMakeRect(0, 0, frame_w, frame_h))
 
 -- "interval" Input Box
-set inputInterval to NSTextField's alloc()'s initWithFrame:(currentApp's NSMakeRect((frame_w / 2), (frame_h * 0.12), 80, 22))
+set inputInterval to NSTextField's alloc()'s initWithFrame:(currentApp's NSMakeRect((frame_w / 2), (frame_h * 0.5), 80, 22))
 inputInterval's setStringValue:"5" -- basic value
-set labelInterval to NSTextField's alloc()'s initWithFrame:(currentApp's NSMakeRect(0, (frame_h * 0.12), 140, 22))
+set labelInterval to NSTextField's alloc()'s initWithFrame:(currentApp's NSMakeRect(0, (frame_h * 0.5), 140, 22))
 labelInterval's setStringValue:"Interval (seconds):"
 labelInterval's setBezeled:false
-labelInteval's setDrawsBackground:false
-labelInterva's setEditable:false
+labelInterval's setDrawsBackground:false
+labelInterval's setEditable:false
 
 -- "duration" input box
-set inputDuration to NSTextField's alloc()'s initWithFrame:(currentApp's NSMakeRect((frame_w / 2), (frame_h * 0.02), 80, 22))
+set inputDuration to NSTextField's alloc()'s initWithFrame:(currentApp's NSMakeRect((frame_w / 2), (frame_h * 0.1), 80, 22))
 inputDuration's setStringValue:"10" -- basic value
-set labelDuration to NSTextField's alloc()'s initWithFrame:(currentApp's NSMakeRect(0, (frame_h * 0.2), 140, 22))
+set labelDuration to NSTextField's alloc()'s initWithFrame:(currentApp's NSMakeRect(0, (frame_h * 0.1), 140, 22))
 labelDuration's setStringValue:"Duration (minutes):"
 labelDuration's setBezeled:false
 labelDuration's setDrawsBackground:false
