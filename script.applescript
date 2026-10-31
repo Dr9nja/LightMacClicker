@@ -74,13 +74,18 @@ accessoryView's addSubview:labelDuration
 -- attaching the view to the window
 theAlert's setAccessoryView:accessoryView
 
--- 3. Ask the user for the total duration (in minutes)
-try
-	set durationResponse to display dialog "Enter how many minutes this should run:" default answer "10" buttons {"Cancel", "OK"} default button "OK"
-	set totalMinutes to text returned of durationResponse as integer
-on error
-	return -- User canceled
-end try
+-- Ask the user for the total duration (in minutes)
+--try
+--set durationResponse to display dialog "Enter how many minutes this should run:" default answer "10" buttons {"Cancel", "OK"} default button "OK"
+--set totalMinutes to text returned of durationResponse as integer
+--on error
+--return -- User canceled
+--end try
+
+-- 3. show the window and capture results
+set modalResponse to theAlert's runModal()
+
+
 
 -- 4. Calculate total seconds and loop iterations
 set totalSeconds to totalMinutes * 60
