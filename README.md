@@ -1,11 +1,11 @@
 # LightMacClicker
 
-> **INFO**  
+> **INFO**
 > An experimental clicker to test out how AppleScript works!
 
 ## How to use it
 
-To use this code, you must have `cliclick` installed via Homebrew. You can install it by running the following command in your Terminal window:
+To use this code, you must have `cliclick` installed via Homebrew and have Mac OS X 10.10 Yosemite or newer. You can install it by running the following command in your Terminal window:
 
 ```bash
 brew install cliclick
