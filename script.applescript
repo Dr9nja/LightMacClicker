@@ -57,13 +57,13 @@ labelInteval's setDrawsBackground:false
 labelInterva's setEditable:false
 
 -- "duration" input box
-set inputInterval to NSTextField's alloc()'s initWithFrame:(currentApp's NSMakeRect((frame_w / 2), (frame_h * 0.02), 80, 22))
-inputInterval's setStringValue:"5" -- basic value
-set labelInterval to NSTextField's alloc()'s initWithFrame:(currentApp's NSMakeRect(0, (frame_h * 0.2), 140, 22))
-labelInterval's setStringValue:"Interval (seconds):"
-labelInterval's setBezeled:false
-labelInteval's setDrawsBackground:false
-labelInterva's setEditable:false
+set inputDuration to NSTextField's alloc()'s initWithFrame:(currentApp's NSMakeRect((frame_w / 2), (frame_h * 0.02), 80, 22))
+inputDuration's setStringValue:"10" -- basic value
+set labelDuration to NSTextField's alloc()'s initWithFrame:(currentApp's NSMakeRect(0, (frame_h * 0.2), 140, 22))
+labelDuration's setStringValue:"Duration (minutes):"
+labelDuration's setBezeled:false
+labelDuration's setDrawsBackground:false
+labelDuration's setEditable:false
 
 -- 3. Ask the user for the total duration (in minutes)
 try
