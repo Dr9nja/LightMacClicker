@@ -34,6 +34,10 @@ end if
 
 set currentApp to current application
 set theAlert to NSAlert's alloc()'s init()
+theAlert's setMessageText:"LightMacClicker Settings"
+theAlert's setInfomativeText:"Hai!! Configure your clicking session parameters here:"
+theAlert's addButtonWithTitle:"Start Clicker"
+theAlert's addButtonWithTitle:"Cancel"
 
 -- 3. Ask the user for the total duration (in minutes)
 try
